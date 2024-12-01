@@ -1,0 +1,16 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head> 
+    <title>Equipment booking</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1>Equipment booking</h1>
+    <form action="#" th:action="@{/bookEquipment}" th:object="${bookEquipmentRequest}" method="post">
+        <p>Equipment id: <input type="text" th:field="*{equipment}" /></p>
+    	<p>Client id: <input type="text" th:field="*{person}" /></p>
+        <p>Start date: <input type="date" th:field="*{startDate}" /></p>
+        <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+    </form>
+</body>
+</html>

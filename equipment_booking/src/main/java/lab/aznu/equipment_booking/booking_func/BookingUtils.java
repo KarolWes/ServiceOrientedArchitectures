@@ -14,23 +14,25 @@ public class BookingUtils {
     private static final double LATE_RETURN_FEE = 5.00;
     private static int bookingIdCounter = 1;
 
-    public BookingInfo bookEquipment(Person client, Equipment equipment, LocalDate startDate)
+    public BookingInfo bookEquipment(String  client, String equipment, LocalDate startDate)
             throws BookingError {
         validateBookingInput(client, equipment, startDate);
 
-        if (!equipment.getState().equals(BookingState.FREE)) {
+        Equipment eq = new Equipment(Integer.parseInt(equipment));
+        if (!eq.getState().equals(BookingState.FREE)) {
             throw new BookingError("Equipment is not available for booking.");
         }
 
         BookingInfo bookingInfo = new BookingInfo();
         bookingInfo.setId(generateBookingId());
-        bookingInfo.setPerson(client);
-        bookingInfo.setEquipment(equipment);
+        bookingInfo.setPerson(new Person(client));
+
+        bookingInfo.setEquipment(eq);
         bookingInfo.setStartDate(startDate);
         bookingInfo.setEndDate(startDate.plusDays(30));
-        equipment.setState(BookingState.BOOKED);
+        eq.setState(BookingState.BOOKED);
 
-        bookingInfo.setPrice(calculatePrice(equipment));
+        bookingInfo.setPrice(calculatePrice(eq));
         return bookingInfo;
     }
 
@@ -60,7 +62,7 @@ public class BookingUtils {
     }
 
     // Helper Methods
-    private void validateBookingInput(Person client, Equipment equipment, LocalDate startDate) throws BookingError {
+    private void validateBookingInput(String client, String equipment, LocalDate startDate) throws BookingError {
         if (client == null || equipment == null || startDate == null) {
             throw new BookingError("Booking details are incomplete.");
         }

@@ -1,7 +1,6 @@
 package lab.aznu.equipment_booking.booking_func;
 
 import lab.aznu.equipment_booking.types.*;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ws.server.endpoint.annotation.Endpoint;
 import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
 import org.springframework.ws.server.endpoint.annotation.RequestPayload;
@@ -27,8 +26,8 @@ public class BookingEndpoint {
     public BookEquipmentResponse bookEquipment(@RequestPayload BookEquipmentRequest request) {
         try {
             BookingInfo bookingInfo = bookingService.bookEquipment(
-                    new Person(request.getClient()),
-                    new Equipment(request.getEquipmentId()),
+                    request.getClient(),
+                    String.valueOf(request.getEquipmentId()),
                     LocalDate.parse(request.getStartDate())
             );
 

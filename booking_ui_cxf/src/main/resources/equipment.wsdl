@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                  xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+                  xmlns:tns="http://equipment.bp.org/"
+                  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+                  xmlns:ns3="http://schemas.xmlsoap.org/soap/http"
+                  xmlns:ns1="http://www.bp.org/equipment/"
+                  name="EquipmentBookingEndpointService"
+                  targetNamespace="http://equipment.bp.org/">
+  <wsdl:import location="http://localhost:8080/ws/booking?wsdl=EquipmentBooking.wsdl" namespace="http://www.bp.org/equipment/">
+    </wsdl:import>
+  <wsdl:binding name="EquipmentBookingEndpointServiceSoapBinding" type="ns1:EquipmentBooking">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="bookEquipment">
+      <soap:operation soapAction="http://www.bp.org/equipment/bookEquipment" style="document"/>
+      <wsdl:input name="bookEquipment">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="bookEquipmentResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="BookingErrorMsg">
+        <soap:fault name="BookingErrorMsg" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="cancelBooking">
+      <soap:operation soapAction="http://www.bp.org/equipment/cancelBooking" style="document"/>
+      <wsdl:input name="cancelBooking">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="cancelBookingResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="EquipmentFaultMsg">
+        <soap:fault name="EquipmentFaultMsg" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="EquipmentBookingEndpointService">
+    <wsdl:port binding="tns:EquipmentBookingEndpointServiceSoapBinding" name="EquipmentBookingEndpointPort">
+      <soap:address location="http://localhost:8080/ws/booking"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

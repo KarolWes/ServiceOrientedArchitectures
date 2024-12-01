@@ -1,0 +1,14 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head> 
+    <title>Result of equipment booking</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1>Result</h1>
+    <p th:text="'id: ' + ${bookingInfo.id}" />
+    <p th:text="'cost: ' + ${bookingInfo.price}" />
+    <p th:text="'return date: ' + ${bookingInfo.endDate}" />
+    <a href="/bookEquipment">Submit another booking</a>
+</body>
+</html>

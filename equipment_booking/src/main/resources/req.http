@@ -1,0 +1,14 @@
+### GET request to example server
+http://localhost:8080/ws/booking
+POST <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" >
+    <soapenv:Header/>
+    <soapenv:Body>
+    <BookEquipmentRequest>
+    <client>JD</client>
+    <equipmentId>123</equipmentId>
+    <startDate>2024-12-01</startDate>
+    </BookEquipmentRequest>
+    </soapenv:Body>
+</soapenv:Envelope>
+
+###
