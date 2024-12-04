@@ -7,7 +7,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class BookingUiCxfApplication {
 
     public static void main(String[] args) {
-        System.setProperty("jakarta.xml.ws.spi.Provider", "com.sun.xml.ws.spi.ProviderImpl");
         SpringApplication.run(BookingUiCxfApplication.class, args);
     }
 

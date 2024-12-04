@@ -4,12 +4,12 @@ package bp.equipment;
 import bp.BookEquipmentRequest;
 import bp.CancelBookingRequest;
 import bp.types.BookingInfo;
-import jakarta.jws.WebMethod;
-import jakarta.jws.WebParam;
-import jakarta.jws.WebResult;
-import jakarta.jws.WebService;
-import jakarta.jws.soap.SOAPBinding;
-import jakarta.xml.bind.annotation.XmlSeeAlso;
+import javax.jws.WebMethod;
+import javax.jws.WebParam;
+import javax.jws.WebResult;
+import javax.jws.WebService;
+import javax.jws.soap.SOAPBinding;
+import javax.xml.bind.annotation.XmlSeeAlso;
 import bp.types.ObjectFactory;
 
 @WebService(targetNamespace = "http://www.bp.org/equipment/", name = "EquipmentBooking")

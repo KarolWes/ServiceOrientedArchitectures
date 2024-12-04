@@ -2,7 +2,7 @@
 package bp;
 
 
-import jakarta.xml.bind.annotation.*;
+import javax.xml.bind.annotation.*;
 import lombok.Data;
 
 @XmlAccessorType(XmlAccessType.FIELD)

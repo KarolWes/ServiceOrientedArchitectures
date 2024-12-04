@@ -1,10 +1,10 @@
 package bp.equipment;
 
 
-import jakarta.xml.ws.Service;
-import jakarta.xml.ws.WebEndpoint;
-import jakarta.xml.ws.WebServiceClient;
-import jakarta.xml.ws.WebServiceFeature;
+import javax.xml.ws.Service;
+import javax.xml.ws.WebEndpoint;
+import javax.xml.ws.WebServiceClient;
+import javax.xml.ws.WebServiceFeature;
 
 import javax.xml.namespace.QName;
 import java.net.MalformedURLException;

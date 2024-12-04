@@ -4,7 +4,7 @@ package bp;
 
 import bp.types.Equipment;
 import bp.types.Person;
-import jakarta.xml.bind.annotation.*;
+import javax.xml.bind.annotation.*;
 import lombok.Data;
 
 import java.time.LocalDate;

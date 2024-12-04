@@ -2,7 +2,7 @@
 package bp.equipment;
 
 import bp.types.BookingError;
-import jakarta.xml.ws.WebFault;
+import javax.xml.ws.WebFault;
 
 @WebFault(name = "bookingError", targetNamespace = "http://www.bp.org")
 public class BookingErrorMsg extends Exception {
