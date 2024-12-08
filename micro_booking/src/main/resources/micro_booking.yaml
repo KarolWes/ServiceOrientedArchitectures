@@ -1,6 +1,6 @@
 openapi: 3.0.1
 info:
-  title: Booking mircro service
+  title: Booking micro service
   description: Micro service to book a traveling equipment
   contact:
     email: supportm@bp.org
@@ -19,13 +19,13 @@ paths:
       tags:
       - equipment
       summary: Booking of a equipment
-      operationId: bookEquiplemnt
+      operationId: bookProcess
       requestBody:
         description: Details of equipment which you are booking
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/BookEquipmentRequest'
+              $ref: '#/components/schemas/BookProcessRequest'
         required: true
       responses:
         400:
@@ -97,7 +97,7 @@ components:
           $ref: '#/components/schemas/Person'
         visit:
           $ref: '#/components/schemas/Visit'
-    BookingRequest:
+    BookProcessRequest:
       type: object
       properties:
         person:

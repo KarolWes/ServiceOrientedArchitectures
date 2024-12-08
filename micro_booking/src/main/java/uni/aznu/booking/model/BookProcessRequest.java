@@ -24,7 +24,7 @@ import lombok.Data;
 
 @Data
 @Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2020-12-06T08:44:40.322365400+01:00[Europe/Warsaw]")
-public class BookingRequest {
+public class BookProcessRequest {
   @JsonProperty("person")
   private Person person = null;
 
@@ -37,22 +37,22 @@ public class BookingRequest {
   @JsonProperty("paymentCard")
   private PaymentCard paymentCard = null;
 
-  public BookingRequest person(Person person) {
+  public BookProcessRequest person(Person person) {
     this.person = person;
     return this;
   }
 
-  public BookingRequest equipment(Equipment equipment) {
+  public BookProcessRequest equipment(Equipment equipment) {
     this.equipment = equipment;
     return this;
   }
 
-  public BookingRequest visit(Visit visit) {
+  public BookProcessRequest visit(Visit visit) {
     this.visit = visit;
     return this;
   }
 
-  public BookingRequest paymentCard(PaymentCard paymentCard) {
+  public BookProcessRequest paymentCard(PaymentCard paymentCard) {
     this.paymentCard = paymentCard;
     return this;
   }
@@ -66,11 +66,11 @@ public class BookingRequest {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    BookingRequest bookingRequest = (BookingRequest) o;
-    return Objects.equals(this.person, bookingRequest.person) &&
-        Objects.equals(this.equipment, bookingRequest.equipment) &&
-        Objects.equals(this.visit, bookingRequest.visit) &&
-        Objects.equals(this.paymentCard, bookingRequest.paymentCard);
+    BookProcessRequest bookProcessRequest = (BookProcessRequest) o;
+    return Objects.equals(this.person, bookProcessRequest.person) &&
+        Objects.equals(this.equipment, bookProcessRequest.equipment) &&
+        Objects.equals(this.visit, bookProcessRequest.visit) &&
+        Objects.equals(this.paymentCard, bookProcessRequest.paymentCard);
   }
 
   @Override

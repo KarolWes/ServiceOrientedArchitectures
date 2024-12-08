@@ -5,7 +5,7 @@ import java.util.HashMap;
 
 import javax.annotation.PostConstruct;
 
-import uni.aznu.booking.model.BookingRequest;
+import uni.aznu.booking.model.BookProcessRequest;
 import uni.aznu.booking.model.BookingInfo;
 import org.springframework.stereotype.Service;
 
@@ -19,17 +19,17 @@ public class PaymentService {
 	}
 	
 	public static class PaymentData {
-		BookingRequest bookingRequest;
+		BookProcessRequest bookProcessRequest;
 		BookingInfo visitBookingInfo;
 		BookingInfo equipmentBookingInfo;
 		public boolean isReady() {
-			return bookingRequest !=null && visitBookingInfo !=null && equipmentBookingInfo !=null;
+			return bookProcessRequest !=null && visitBookingInfo !=null && equipmentBookingInfo !=null;
 		}
 	}
 	
-	public synchronized boolean addBookRequest(String bookId, BookingRequest bookingRequest) {
+	public synchronized boolean addBookRequest(String bookId, BookProcessRequest bookProcessRequest) {
 		PaymentData paymentData = getPaymentData(bookId);
-		paymentData.bookingRequest = bookingRequest;
+		paymentData.bookProcessRequest = bookProcessRequest;
 		return paymentData.isReady();
 	}
 	
